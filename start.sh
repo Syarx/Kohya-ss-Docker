@@ -3,7 +3,7 @@ echo "Container Started"
 export PYTHONUNBUFFERED=1
 source /workspace/kohya_ss-linux/venv/bin/activate
 cd /workspace/kohya_ss-linux
-python /workspace/kohya_ss-linux/kohya_gui.py &
+python relauncher.py &
 
 if [[ $PUBLIC_KEY ]]
 then
