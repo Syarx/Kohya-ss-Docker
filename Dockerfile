@@ -23,7 +23,8 @@ nano \
 python3-pip python3 python3.10-venv \
 apt-transport-https ca-certificates && \
 update-ca-certificates
- 
+
+WORKDIR /workspace
 RUN git clone https://github.com/Thund3rPat/kohya_ss-linux.git
 WORKDIR /workspace/kohya_ss-linux
 RUN python3 -m venv venv
@@ -46,8 +47,8 @@ RUN apt clean && rm -rf /var/lib/apt/lists/* && \
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
   
 ADD relauncher.py .
-ADD start.sh /start.sh
-RUN chmod a+x /start.sh
+ADD start.sh .
+RUN chmod +x ./start.sh
 
 SHELL ["/bin/bash", "--login", "-c"]
-CMD [ "/start.sh" ]
+# CMD [ "./start.sh" ]
