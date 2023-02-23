@@ -45,6 +45,7 @@ RUN python -m install --skip-torch-cuda-test
 RUN apt clean && rm -rf /var/lib/apt/lists/* && \
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
   
+ADD relauncher.py .
 ADD start.sh /start.sh
 RUN chmod a+x /start.sh
 
