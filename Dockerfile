@@ -25,23 +25,24 @@ apt-transport-https ca-certificates && \
 update-ca-certificates
 
 WORKDIR /workspace
-# RUN git clone https://github.com/Thund3rPat/kohya_ss-linux.git
-# WORKDIR /workspace/kohya_ss-linux
-# RUN python3 -m venv venv
-# SHELL ["/bin/bash", "-c", "source venv/bin/activate"]
+RUN git clone https://github.com/Thund3rPat/kohya_ss-linux.git
+WORKDIR /workspace/kohya_ss-linux
+RUN python3 -m venv venv
+USER root
+SHELL ["/bin/bash", "-c", "source venv/bin/activate"]
  
-# RUN pip install --use-pep517 --upgrade -r requirements.txt
-# RUN accelerate config default
+RUN pip install --use-pep517 --upgrade -r requirements.txt
+RUN accelerate config default
  
 
  
-# RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-# RUN python get-pip.py
-# RUN pip install -U jupyterlab ipywidgets jupyter-archive
-# RUN jupyter nbextension enable --py widgetsnbextension
+RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+RUN python get-pip.py
+RUN pip install -U jupyterlab ipywidgets jupyter-archive
+RUN jupyter nbextension enable --py widgetsnbextension
 
-# ADD install.py .
-# RUN python -m install --skip-torch-cuda-test
+ADD install.py .
+RUN python -m install --skip-torch-cuda-test
 
 RUN apt clean && rm -rf /var/lib/apt/lists/* && \
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
