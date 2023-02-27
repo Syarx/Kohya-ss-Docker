@@ -29,7 +29,7 @@ RUN git clone https://github.com/Thund3rPat/kohya_ss-linux.git
 WORKDIR /workspace/kohya_ss-linux
 RUN python3 -m venv venv
 USER root
-SHELL ["/bin/bash", "-c", "source venv/bin/activate"]
+SHELL ["/bin/bash","--login", "-c", "source venv/bin/activate"]
  
 RUN pip install --use-pep517 --upgrade -r requirements.txt
 RUN accelerate config default
