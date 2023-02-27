@@ -25,13 +25,13 @@ apt-transport-https ca-certificates && \
 update-ca-certificates
 
 WORKDIR /workspace
-RUN git clone https://github.com/Thund3rPat/kohya_ss-linux.git
-WORKDIR /workspace/kohya_ss-linux
-RUN python3 -m venv venv
-SHELL ["/bin/bash", "-c", "source venv/bin/activate"]
+# RUN git clone https://github.com/Thund3rPat/kohya_ss-linux.git
+# WORKDIR /workspace/kohya_ss-linux
+# RUN python3 -m venv venv
+# SHELL ["/bin/bash", "-c", "source venv/bin/activate"]
  
-RUN pip install --use-pep517 --upgrade -r requirements.txt
-RUN accelerate config default
+# RUN pip install --use-pep517 --upgrade -r requirements.txt
+# RUN accelerate config default
  
 
  
