@@ -35,13 +35,13 @@ WORKDIR /workspace
  
 
  
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-RUN python get-pip.py
-RUN pip install -U jupyterlab ipywidgets jupyter-archive
-RUN jupyter nbextension enable --py widgetsnbextension
+# RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+# RUN python get-pip.py
+# RUN pip install -U jupyterlab ipywidgets jupyter-archive
+# RUN jupyter nbextension enable --py widgetsnbextension
 
-ADD install.py .
-RUN python -m install --skip-torch-cuda-test
+# ADD install.py .
+# RUN python -m install --skip-torch-cuda-test
 
 RUN apt clean && rm -rf /var/lib/apt/lists/* && \
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
