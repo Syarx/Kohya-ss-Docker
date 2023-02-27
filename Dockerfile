@@ -49,7 +49,7 @@ RUN apt clean && rm -rf /var/lib/apt/lists/* && \
   
 ADD relauncher.py .
 COPY start.sh /start.sh
-RUN chmod 777 /start.sh
+RUN chmod a+x /start.sh
 
 SHELL ["/bin/bash", "--login", "-c"]
 CMD [ "/start.sh" ]
