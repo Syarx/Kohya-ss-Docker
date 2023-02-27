@@ -51,4 +51,4 @@ ADD start.sh .
 RUN chmod +x ./start.sh
 
 SHELL ["/bin/bash", "--login", "-c"]
-# CMD [ "./start.sh" ]
+CMD [ "./start.sh" ]
