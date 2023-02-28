@@ -33,7 +33,7 @@ RUN . venv/bin/activate
 RUN pip install --use-pep517 --upgrade -r requirements.txt
 RUN accelerate config default
  
-
+ENV PATH="/workspace/kohya_ss-linux/venv/bin:$PATH"
  
 RUN pip install -U jupyterlab ipywidgets jupyter-archive
 RUN jupyter nbextension enable --py widgetsnbextension
