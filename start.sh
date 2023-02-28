@@ -1,7 +1,7 @@
 #!/bin/bash
 echo "Container Started"
 export PYTHONUNBUFFERED=1
-python relauncher.py &
+# python relauncher.py &
 
 if [[ $PUBLIC_KEY ]]
 then
