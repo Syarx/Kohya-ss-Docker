@@ -1,7 +1,11 @@
 #!/bin/bash
 echo "Container Started"
 export PYTHONUNBUFFERED=1
-# python relauncher.py &
+. /workspace/kohya_ss-linux/venv/bin/activate
+pip install --use-pep517 --upgrade -r requirements.txt
+accelerate config default --mixed_precision fp16
+. /workspace/kohya_ss-linux/venv/bin/activate
+python3 /workspace/kohya_ss-linux/kohya_gui.py &
 
 if [[ $PUBLIC_KEY ]]
 then

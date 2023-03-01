@@ -39,7 +39,7 @@ RUN pip install -U jupyterlab ipywidgets jupyter-archive
 RUN jupyter nbextension enable --py widgetsnbextension
 
 # ADD install.py .
-# RUN python -m install --skip-torch-cuda-test
+# RUN python3 -m install --skip-torch-cuda-test
 
 RUN apt clean && rm -rf /var/lib/apt/lists/* && \
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
